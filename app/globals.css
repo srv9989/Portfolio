@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f2ea;
+  --foreground: #171717;
+  --card: #fffdf8;
+  --border: #ded6c8;
+  --muted: #6b6258;
+  --accent: #b88752;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: rgba(184, 135, 82, 0.22);
+  color: var(--foreground);
+}
+
+/* Hide horizontal scrollbar but keep horizontal scrolling */
+.horizontal-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Stack Field: only center pivot floats slowly */
+.stack-pivot-float {
+  animation: stack-pivot-float 18s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.stack-pivot-float > div:first-child {
+  animation: stack-pivot-shell-spin 48s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes stack-pivot-float {
+  0% {
+    transform: translate(-50%, -50%) translate(10px, 0px);
+  }
+
+  25% {
+    transform: translate(-50%, -50%) translate(0px, 10px);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) translate(-10px, 0px);
+  }
+
+  75% {
+    transform: translate(-50%, -50%) translate(0px, -10px);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) translate(10px, 0px);
+  }
+}
+
+@keyframes stack-pivot-shell-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
